@@ -8,7 +8,7 @@ issueTrackerURL="http://my.issue.tracker/" #optional
 
 modId="narutomod" #mandatory
 
-version="1.15.2-1.0.0" #mandatory
+version="1.0" #mandatory
 
 displayName="Naruto Mod" #mandatory
 
@@ -26,7 +26,7 @@ description='''
 A NarutoMod for Naruto funs
 '''
 
-[[dependencies.examplemod]] #optional
+[[dependencies.narutomod]] #optional
     # the modid of the dependency
     modId="forge" #mandatory
     # Does this dependency have to exist - if not, ordering below must be specified
@@ -39,7 +39,7 @@ A NarutoMod for Naruto funs
     side="BOTH"
 
 
-[[dependencies.examplemod]]
+[[dependencies.narutomod]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.15.2]"
