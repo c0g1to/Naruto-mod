@@ -1,10 +1,13 @@
 {
   "item.narutomod.shuriken": "Shuriken",
   "item.narutomod.kunai": "Kunai",
+
+  "item.narutomod.katana": "Katana",
+
   "item.narutomod.ramen": "Ramen",
   "item.narutomod.battle_pill": "Battle pill",
 
-  "block.narutomod.burst_seal": "Burst seal",
+  "block.narutomod.explosive_tag": "Explosive tag",
 
   "itemGroup.narutomod": "Naruto Stuff"
 }

@@ -36,8 +36,6 @@ public class NarutoMod {
         bus.addListener(this::setupCommon);
         bus.addListener(this::setupClient);
 
-        //RegistryHandler.init();
-
         MinecraftForge.EVENT_BUS.register(this);
     }
 

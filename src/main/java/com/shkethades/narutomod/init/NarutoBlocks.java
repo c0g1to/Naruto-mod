@@ -1,7 +1,7 @@
 package com.shkethades.narutomod.init;
 
 import com.shkethades.narutomod.NarutoMod;
-import com.shkethades.narutomod.block.BurstSealBlock;
+import com.shkethades.narutomod.block.ExplosiveTagBlock;
 import net.minecraft.block.Block;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -12,10 +12,10 @@ import net.minecraftforge.registries.ObjectHolder;
 @ObjectHolder(NarutoMod.MOD_ID)
 public class NarutoBlocks {
 
-    public static final Block BURST_SEAL = new BurstSealBlock();
+    public static final Block EXPLOSIVE_TAG = new ExplosiveTagBlock();
 
     @SubscribeEvent
     public static void registerBlocks(final RegistryEvent.Register<Block> event) {
-        event.getRegistry().register(BURST_SEAL.setRegistryName("burst_seal"));
+        event.getRegistry().register(EXPLOSIVE_TAG.setRegistryName("explosive_tag"));
     }
 }
