@@ -17,6 +17,7 @@ import org.apache.logging.log4j.Logger;
 
 
 @Mod(NarutoMod.MOD_ID)
+@Mod.EventBusSubscriber(modid = NarutoMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class NarutoMod {
 
     public static NarutoMod instance;

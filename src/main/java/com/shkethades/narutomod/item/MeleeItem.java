@@ -11,11 +11,11 @@ import java.util.function.Supplier;
 
 public class MeleeItem extends Item {
 
-    public MeleeItem () {
+    public MeleeItem() {
         super(new Item.Properties().group(NarutoMod.GROUP));
     }
 
-    public static enum Tiers implements IItemTier {
+    public enum Tiers implements IItemTier {
 
         STEEL(2, 600, 9.0f, 2.0f, 16, () -> {
             return Ingredient.fromItems(Items.IRON_INGOT);
@@ -28,49 +28,43 @@ public class MeleeItem extends Item {
         private final int enchantability;
         private final LazyValue<Ingredient> repairMaterial;
 
-        private Tiers(int harvestLevel,
-                     int maxUses,
-                     float efficiency,
-                     float attackDamage,
-                     int enchantability,
-                     Supplier<Ingredient> repairMaterial
-        ) {
-            this.harvestLevel = harvestLevel;
-            this.maxUses = maxUses;
-            this.efficiency = efficiency;
-            this.attackDamage = attackDamage;
-            this.enchantability = enchantability;
-            this.repairMaterial = new LazyValue<>(repairMaterial);
+        private Tiers(int harvestLevelIn, int maxUsesIn, float efficiencyIn, float attackDamageIn, int enchantabilityIn, Supplier<Ingredient> repairMaterialSupplier) {
+            this.harvestLevel = harvestLevelIn;
+            this.maxUses = maxUsesIn;
+            this.efficiency = efficiencyIn;
+            this.attackDamage = attackDamageIn;
+            this.enchantability = enchantabilityIn;
+            this.repairMaterial = new LazyValue<>(repairMaterialSupplier);
         }
 
         @Override
         public int getMaxUses() {
-            return maxUses;
+            return this.maxUses;
         }
 
         @Override
         public float getEfficiency() {
-            return efficiency;
+            return this.efficiency;
         }
 
         @Override
         public float getAttackDamage() {
-            return attackDamage;
+            return this.attackDamage;
         }
 
         @Override
         public int getHarvestLevel() {
-            return harvestLevel;
+            return this.harvestLevel;
         }
 
         @Override
         public int getEnchantability() {
-            return enchantability;
+            return this.enchantability;
         }
 
         @Override
         public Ingredient getRepairMaterial() {
-            return repairMaterial.getValue();
+            return this.repairMaterial.getValue();
         }
     }
 }
