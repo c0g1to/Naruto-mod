@@ -25,16 +25,16 @@ public class NarutoItems {
         event.getRegistry().register(new ThrowableItem().setRegistryName("kunai"));
 
         event.getRegistry().register(new SwordItem(MeleeItem.Tiers.STEEL, 3, -1.6f,
-                new Item.Properties().group(NarutoMod.GROUP)).setRegistryName("katana"));
+                new MeleeItem.Properties().group(NarutoMod.GROUP)).setRegistryName("katana"));
 
         event.getRegistry().register(new ArmorItem(NarutoArmorItem.MaterialTiers.SHINOBI, EquipmentSlotType.HEAD,
-                new Item.Properties().group(NarutoMod.GROUP)).setRegistryName("headband"));
+                new NarutoArmorItem.Properties().group(NarutoMod.GROUP)).setRegistryName("headband"));
         event.getRegistry().register(new ArmorItem(NarutoArmorItem.MaterialTiers.SHINOBI, EquipmentSlotType.CHEST,
-                new Item.Properties().group(NarutoMod.GROUP)).setRegistryName("flak_jacket"));
+                new NarutoArmorItem.Properties().group(NarutoMod.GROUP)).setRegistryName("flak_jacket"));
         event.getRegistry().register(new ArmorItem(NarutoArmorItem.MaterialTiers.ANBU, EquipmentSlotType.HEAD,
-                new Item.Properties().group(NarutoMod.GROUP)).setRegistryName("anbu_mask"));
+                new NarutoArmorItem.Properties().group(NarutoMod.GROUP)).setRegistryName("anbu_mask"));
         event.getRegistry().register(new ArmorItem(NarutoArmorItem.MaterialTiers.ANBU, EquipmentSlotType.CHEST,
-                new Item.Properties().group(NarutoMod.GROUP)).setRegistryName("anbu_vest"));
+                new NarutoArmorItem.Properties().group(NarutoMod.GROUP)).setRegistryName("anbu_vest"));
 
         event.getRegistry().register(FoodItem.RAMEN.setRegistryName("ramen"));
         event.getRegistry().register(FoodItem.BATTLE_PILL.setRegistryName("battle_pill"));

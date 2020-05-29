@@ -21,11 +21,11 @@ public class NarutoArmorItem extends Item {
 
     public enum MaterialTiers implements IArmorMaterial {
 
-        SHINOBI(NarutoMod.MOD_ID + ":shinobi", 18, new int[]{2, 4, 7, 3}, 12, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0.0f, () -> {
+        SHINOBI(NarutoMod.MOD_ID + ":shinobi", 18, new int[]{2, 4, 6, 2}, 12, SoundEvents.ITEM_ARMOR_EQUIP_CHAIN, 0.0f, () -> {
             return Ingredient.fromItems(Items.IRON_INGOT);
         }),
 
-        ANBU(NarutoMod.MOD_ID + ":anbu", 20, new int[]{2, 4, 8, 4}, 12, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.0f, () -> {
+        ANBU(NarutoMod.MOD_ID + ":anbu", 22, new int[]{2, 4, 7, 3}, 12, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1.0f, () -> {
             return Ingredient.fromItems(Items.IRON_INGOT);
         });
 
