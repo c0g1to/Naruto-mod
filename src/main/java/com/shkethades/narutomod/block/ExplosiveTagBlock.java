@@ -36,5 +36,6 @@ public class ExplosiveTagBlock extends Block {
             ServerWorld serverWorld = (ServerWorld) worldIn;
             serverWorld.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 4.0f, true, Explosion.Mode.DESTROY);
         }
+
     }
 }
