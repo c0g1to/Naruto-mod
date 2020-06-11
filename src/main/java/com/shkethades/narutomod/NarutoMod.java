@@ -1,8 +1,10 @@
 package com.shkethades.narutomod;
 
 import com.shkethades.narutomod.init.NarutoBlocks;
+import com.shkethades.narutomod.init.NarutoEntities;
 import com.shkethades.narutomod.init.NarutoItems;
 import com.shkethades.narutomod.item.FoodItem;
+import net.minecraft.client.gui.IGuiEventListener;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -25,7 +27,6 @@ import org.apache.logging.log4j.Logger;
 @Mod(NarutoMod.MOD_ID)
 @Mod.EventBusSubscriber(modid = NarutoMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class NarutoMod {
-
     public static NarutoMod instance;
     private static final Logger LOGGER = LogManager.getLogger();
     public static final String MOD_ID = "narutomod";
@@ -42,6 +43,7 @@ public class NarutoMod {
 
         NarutoBlocks.BLOCKS.register(bus);
         NarutoItems.ITEMS.register(bus);
+        NarutoEntities.ENTITY_TYPES.register(bus);
 
         bus.addListener(this::setupCommon);
         bus.addListener(this::setupClient);
