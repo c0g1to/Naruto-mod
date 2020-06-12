@@ -47,8 +47,8 @@ public class AlliedNinjaEntity extends MonsterEntity {
         this.getAttribute(SharedMonsterAttributes.ATTACK_SPEED).setBaseValue(1D);
     }
 
-    public boolean canSpawn(IWorld p_213380_1_, SpawnReason p_213380_2_) {
-        return p_213380_1_.getDifficulty() != Difficulty.PEACEFUL;
+    public boolean canSpawn(IWorld worldIn, SpawnReason reason) {
+        return true;
     }
 
     public class AIMeleeAttack extends MeleeAttackGoal {
@@ -58,12 +58,12 @@ public class AlliedNinjaEntity extends MonsterEntity {
         }
 
         @Override
-        protected void checkAndPerformAttack(LivingEntity p_190102_1_, double p_190102_2_) {
-            double d0 = this.getAttackReachSqr(p_190102_1_);
-            if (p_190102_2_ <= d0 && this.attackTick <= 0) {
+        protected void checkAndPerformAttack(LivingEntity enemy, double distToEnemySqr) {
+            double d0 = this.getAttackReachSqr(enemy);
+            if (distToEnemySqr <= d0 && this.attackTick <= 0) {
                 this.attackTick = 20;
-                this.attacker.attackEntityAsMob(p_190102_1_);
-            } else if (p_190102_2_ <= d0 * 2.0D) {
+                this.attacker.attackEntityAsMob(enemy);
+            } else if (distToEnemySqr <= d0 * 2.0D) {
                 if (this.attackTick <= 0) {
                     this.attackTick = 20;
                 }
