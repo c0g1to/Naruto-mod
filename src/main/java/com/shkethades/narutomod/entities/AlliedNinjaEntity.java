@@ -1,17 +1,22 @@
 package com.shkethades.narutomod.entities;
+
 import com.google.common.base.Predicates;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;
 import net.minecraft.entity.merchant.villager.AbstractVillagerEntity;
-import net.minecraft.entity.monster.*;
+import net.minecraft.entity.monster.MonsterEntity;
+import net.minecraft.entity.monster.SpiderEntity;
+import net.minecraft.entity.monster.ZombieEntity;
 import net.minecraft.entity.passive.IronGolemEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.DamageSource;
-import net.minecraft.world.*;
+import net.minecraft.world.Difficulty;
+import net.minecraft.world.IWorld;
+import net.minecraft.world.World;
 
-public class NinjaEntity extends MonsterEntity  {
+public class AlliedNinjaEntity extends MonsterEntity {
 
-    public NinjaEntity(EntityType<? extends MonsterEntity> type, World worldIn) {
+    public AlliedNinjaEntity(EntityType<? extends MonsterEntity> type, World worldIn) {
         super(type, worldIn);
     }
 
@@ -19,17 +24,16 @@ public class NinjaEntity extends MonsterEntity  {
     protected void registerGoals() {
         this.goalSelector.addGoal(0, new SwimGoal(this) {
             public boolean shouldExecute() {
-                return NinjaEntity.this.isInWater() && NinjaEntity.this.getSubmergedHeight() > 0.6 || NinjaEntity.this.isInLava();
+                return AlliedNinjaEntity.this.isInWater() && AlliedNinjaEntity.this.getSubmergedHeight() > 0.6 || AlliedNinjaEntity.this.isInLava();
             }
         });
         this.goalSelector.addGoal(10, new LookAtGoal(this, MobEntity.class, 15.0F));
-        this.goalSelector.addGoal(1, new NinjaEntity.AIMeleeAttack());
+        this.goalSelector.addGoal(1, new AlliedNinjaEntity.AIMeleeAttack());
         this.goalSelector.addGoal(5, new RandomWalkingGoal(this, 1.0D));
         this.goalSelector.addGoal(6, new LookAtGoal(this, PlayerEntity.class, 6.0F));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillagerEntity.class, false));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, IronGolemEntity.class, true));
-        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AlliedNinjaEntity.class, false));
-        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<PlayerEntity>(this, PlayerEntity.class, 90, true, true, Predicates.alwaysTrue()));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, NinjaEntity.class, false));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, ZombieEntity.class, false));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, SpiderEntity.class, false));
     }
 
     @Override
@@ -47,29 +51,10 @@ public class NinjaEntity extends MonsterEntity  {
         return p_213380_1_.getDifficulty() != Difficulty.PEACEFUL;
     }
 
-    @Override
-    public boolean attackEntityFrom(DamageSource source, float amount) {
-        if (this.isInvulnerableTo(source)) {
-            return false;
-        } else {
-            Entity entity = source.getTrueSource();
-
-            if (entity instanceof PlayerEntity) {
-                this.setAttackTarget((PlayerEntity) entity);
-            }
-            return super.attackEntityFrom(source, amount);
-        }
-    }
-
-    @Override
-    public boolean isPreventingPlayerRest(PlayerEntity playerIn) {
-        return this.world.getDifficulty() != Difficulty.PEACEFUL && this.getAttackingEntity() == playerIn;
-    }
-
     public class AIMeleeAttack extends MeleeAttackGoal {
 
         public AIMeleeAttack() {
-            super(NinjaEntity.this, 1.25D, true);
+            super(AlliedNinjaEntity.this, 1.25D, true);
         }
 
         @Override

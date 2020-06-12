@@ -1,6 +1,8 @@
 package com.shkethades.narutomod.util;
 import com.shkethades.narutomod.NarutoMod;
+import com.shkethades.narutomod.client.entity.render.AlliedNinjaEntityRender;
 import com.shkethades.narutomod.client.entity.render.NinjaEntityRender;
+import com.shkethades.narutomod.entities.AlliedNinjaEntity;
 import com.shkethades.narutomod.init.NarutoEntities;
 import net.minecraft.client.gui.ScreenManager;
 import net.minecraft.client.renderer.RenderType;
@@ -23,6 +25,7 @@ public class ClientEventBusSubscriber {
 
     @SubscribeEvent
     public static void clientSetup(FMLClientSetupEvent event) {
-        RenderingRegistry.registerEntityRenderingHandler(NarutoEntities.EXAMPLE_ENTITY.get(), NinjaEntityRender::new);
+        RenderingRegistry.registerEntityRenderingHandler(NarutoEntities.NINJA_ENTITY.get(), NinjaEntityRender::new);
+        RenderingRegistry.registerEntityRenderingHandler(NarutoEntities.ALLIED_NINJA_ENTITY.get(), AlliedNinjaEntityRender::new);
     }
 }

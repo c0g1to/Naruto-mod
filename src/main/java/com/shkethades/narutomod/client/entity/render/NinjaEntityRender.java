@@ -10,7 +10,7 @@ import net.minecraft.util.ResourceLocation;
 public class NinjaEntityRender extends MobRenderer<NinjaEntity, NinjaEntityModel<NinjaEntity>> {
 
     protected static final ResourceLocation TEXTURE = new ResourceLocation(NarutoMod.MOD_ID,
-            "textures/entity/example_entity.png");
+            "textures/entity/ninja_entity.png");
 
     public NinjaEntityRender(EntityRendererManager renderManagerIn) {
         super(renderManagerIn, new NinjaEntityModel<NinjaEntity>(), 0.5f);

@@ -43,7 +43,7 @@ public class NarutoMod {
 
         NarutoBlocks.BLOCKS.register(bus);
         NarutoItems.ITEMS.register(bus);
-        NarutoEntities.ENTITY_TYPES.register(bus);
+        NarutoEntities.NINJA_TYPES.register(bus);
 
         bus.addListener(this::setupCommon);
         bus.addListener(this::setupClient);

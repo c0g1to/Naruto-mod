@@ -1,24 +1,19 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "OI ",
-    "GI ",
-    " S "
-  ],
-  "key": {
-    "I": {
-      "tag": "forge:ingots/iron"
-    },
-    "G": {
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
       "tag": "forge:ingots/gold"
     },
-    "O": {
+    {
+      "item": "minecraft:iron_sword"
+    },
+    {
       "item": "minecraft:obsidian"
     },
-    "S": {
-      "item": "minecraft:stick"
+    {
+      "item": "minecraft:obsidian"
     }
-  },
+  ],
   "result": {
     "item": "narutomod:katana"
   }
