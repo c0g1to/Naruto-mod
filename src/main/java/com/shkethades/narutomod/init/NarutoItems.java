@@ -4,12 +4,9 @@ import com.shkethades.narutomod.NarutoMod;
 import com.shkethades.narutomod.item.NarutoArmorItem;
 import com.shkethades.narutomod.item.FoodItem;
 import com.shkethades.narutomod.item.MeleeItem;
-import com.shkethades.narutomod.item.ThrowableItem;
+import com.shkethades.narutomod.item.ShurikenItem;
 import net.minecraft.inventory.EquipmentSlotType;
-import net.minecraft.item.ArmorItem;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.SwordItem;
+import net.minecraft.item.*;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -18,10 +15,10 @@ public class NarutoItems {
 
     public static final DeferredRegister<Item> ITEMS = new DeferredRegister<>(ForgeRegistries.ITEMS, NarutoMod.MOD_ID);
 
-    public static final RegistryObject<Item> SHURIKEN = ITEMS.register("shuriken", ThrowableItem::new);
-    public static final RegistryObject<Item> KUNAI = ITEMS.register("kunai", ThrowableItem::new);
+    public static final RegistryObject<Item> SHURIKEN = ITEMS.register("shuriken", ShurikenItem::new);
 
-    public static final RegistryObject<Item> KATANA = ITEMS.register("katana", () -> new SwordItem(MeleeItem.Tiers.STEEL, 3, -1.6f, new MeleeItem.Properties().group(NarutoMod.GROUP)));
+    public static final RegistryObject<Item> KUNAI = ITEMS.register("kunai", () -> new SwordItem(ItemTier.IRON, 1, -0.8F, new MeleeItem.Properties().group(NarutoMod.GROUP)));
+    public static final RegistryObject<Item> KATANA = ITEMS.register("katana", () -> new SwordItem(MeleeItem.Tiers.STEEL, 3, -1.6F, new MeleeItem.Properties().group(NarutoMod.GROUP)));
 
     public static final RegistryObject<Item> HEADBAND = ITEMS.register("headband", () -> new ArmorItem(NarutoArmorItem.MaterialTiers.SHINOBI, EquipmentSlotType.HEAD, new NarutoArmorItem.Properties().group(NarutoMod.GROUP)));
     public static final RegistryObject<Item> FLAK_JACKET = ITEMS.register("flak_jacket", () -> new ArmorItem(NarutoArmorItem.MaterialTiers.SHINOBI, EquipmentSlotType.CHEST, new NarutoArmorItem.Properties().group(NarutoMod.GROUP)));

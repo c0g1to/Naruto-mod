@@ -1,7 +1,6 @@
 package com.shkethades.narutomod.client.entity.model;
 
-import com.shkethades.narutomod.entities.AlliedNinjaEntity;
-import com.shkethades.narutomod.entities.NinjaEntity;
+import com.shkethades.narutomod.entity.AlliedNinjaEntity;
 import net.minecraft.client.renderer.entity.model.BipedModel;
 
 public class AlliedNinjaEntityModel<T extends AlliedNinjaEntity> extends BipedModel<T> {

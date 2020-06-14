@@ -1,25 +1,23 @@
 package com.shkethades.narutomod;
 
+import com.shkethades.narutomod.client.entity.render.AlliedNinjaEntityRender;
+import com.shkethades.narutomod.client.entity.render.NinjaEntityRender;
 import com.shkethades.narutomod.init.NarutoBlocks;
 import com.shkethades.narutomod.init.NarutoEntities;
 import com.shkethades.narutomod.init.NarutoItems;
 import com.shkethades.narutomod.item.FoodItem;
-import net.minecraft.client.gui.IGuiEventListener;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.SpriteRenderer;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.minecraftforge.registries.IForgeRegistry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -43,7 +41,7 @@ public class NarutoMod {
 
         NarutoBlocks.BLOCKS.register(bus);
         NarutoItems.ITEMS.register(bus);
-        NarutoEntities.NINJA_TYPES.register(bus);
+        NarutoEntities.ENTITIES.register(bus);
 
         bus.addListener(this::setupCommon);
         bus.addListener(this::setupClient);
@@ -53,8 +51,11 @@ public class NarutoMod {
 
     private void setupCommon(final FMLCommonSetupEvent event) { }
 
-    private void setupClient(final FMLClientSetupEvent event) { }
+    private void setupClient(final FMLClientSetupEvent event) {
+        RenderingRegistry.registerEntityRenderingHandler(NarutoEntities.NINJA_ENTITY.get(), NinjaEntityRender::new);
+        RenderingRegistry.registerEntityRenderingHandler(NarutoEntities.ALLIED_NINJA_ENTITY.get(), AlliedNinjaEntityRender::new);
+        RenderingRegistry.registerEntityRenderingHandler(NarutoEntities.SHURIKEN_ENTITY.get(), manager -> new SpriteRenderer<>(manager, Minecraft.getInstance().getItemRenderer()));
+    }
 
-    @SubscribeEvent
     public void serverStart(FMLServerStartingEvent event) { }
 }

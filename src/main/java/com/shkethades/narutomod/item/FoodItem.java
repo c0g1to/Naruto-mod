@@ -29,18 +29,18 @@ public class FoodItem extends Item {
     }
 
     public static Item RAMEN = new FoodItem(new Item.Properties().group(NarutoMod.GROUP)
-            .food(new Food.Builder().hunger(10).saturation(12.0f)
-                    .effect(() -> new EffectInstance(Effects.REGENERATION, 6000, 0), 0.5f)
-                    .effect(() -> new EffectInstance(Effects.SPEED, 6000, 0), 0.5f)
-                    .effect(() -> new EffectInstance(Effects.HASTE, 6000, 0), 0.5f)
+            .food(new Food.Builder().hunger(10).saturation(12.0F)
+                    .effect(() -> new EffectInstance(Effects.REGENERATION, 6000, 0), 0.5F)
+                    .effect(() -> new EffectInstance(Effects.SPEED, 6000, 0), 0.5F)
+                    .effect(() -> new EffectInstance(Effects.HASTE, 6000, 0), 0.5F)
                     .build()),"Regeneration (5:00)\nSpeed (5:00)\nHaste (5:00)", true);
     public static Item BATTLE_PILL = new FoodItem(new Item.Properties().group(NarutoMod.GROUP)
             .food(new Food.Builder().hunger(1).saturation(0.2f).setAlwaysEdible().fastToEat()
-                    .effect(() -> new EffectInstance(Effects.SPEED, 1600, 2), 0.8f)
-                    .effect(() -> new EffectInstance(Effects.JUMP_BOOST, 1200, 2), 0.8f)
-                    .effect(() -> new EffectInstance(Effects.STRENGTH, 800, 1), 0.8f)
-                    .effect(() -> new EffectInstance(Effects.HUNGER, 1200, 1), 0.6f)
-                    .effect(() -> new EffectInstance(Effects.WITHER, 200, 1), 0.2f)
+                    .effect(() -> new EffectInstance(Effects.SPEED, 1600, 2), 0.8F)
+                    .effect(() -> new EffectInstance(Effects.JUMP_BOOST, 1200, 2), 0.8F)
+                    .effect(() -> new EffectInstance(Effects.STRENGTH, 800, 1), 0.8F)
+                    .effect(() -> new EffectInstance(Effects.HUNGER, 1200, 1), 0.6F)
+                    .effect(() -> new EffectInstance(Effects.WITHER, 200, 1), 0.2F)
                     .build()), "Speed III (1:20)\nJump boost III (1:00)\nStrength II (0:40)\nHunger II (1:00)\nWither II (0:10)", false);
 
     @Override

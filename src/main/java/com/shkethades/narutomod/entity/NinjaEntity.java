@@ -1,4 +1,4 @@
-package com.shkethades.narutomod.entities;
+package com.shkethades.narutomod.entity;
 import com.google.common.base.Predicates;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.goal.*;

@@ -17,7 +17,7 @@ public class MeleeItem extends Item {
 
     public enum Tiers implements IItemTier {
 
-        STEEL(2, 600, 9.0f, 2.0f, 16, () -> {
+        STEEL(2, 600, 6.5F, 2.0F, 16, () -> {
             return Ingredient.fromItems(Items.IRON_INGOT);
         });
 

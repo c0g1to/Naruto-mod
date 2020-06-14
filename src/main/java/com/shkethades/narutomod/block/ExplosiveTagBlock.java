@@ -34,7 +34,7 @@ public class ExplosiveTagBlock extends Block {
     private void createExplosion(World worldIn, BlockPos pos) {
         if(!worldIn.isRemote()) {
             ServerWorld serverWorld = (ServerWorld) worldIn;
-            serverWorld.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 4.0f, true, Explosion.Mode.DESTROY);
+            serverWorld.createExplosion(null, pos.getX(), pos.getY(), pos.getZ(), 4.0F, true, Explosion.Mode.BREAK);
         }
 
     }

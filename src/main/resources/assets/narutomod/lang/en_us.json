@@ -1,7 +1,7 @@
 {
   "item.narutomod.shuriken": "Shuriken",
-  "item.narutomod.kunai": "Kunai",
 
+  "item.narutomod.kunai": "Kunai",
   "item.narutomod.katana": "Katana",
 
   "item.narutomod.headband": "Shinobi headband",
@@ -14,6 +14,8 @@
   "item.narutomod.battle_pill": "Battle pill",
 
   "block.narutomod.explosive_tag": "Explosive tag",
+
+  "entity.narutomod.shuriken": "Shuriken",
 
   "itemGroup.narutomod": "Naruto Stuff"
 }
