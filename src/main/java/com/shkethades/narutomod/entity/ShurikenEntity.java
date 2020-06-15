@@ -1,13 +1,17 @@
 package com.shkethades.narutomod.entity;
 
+import com.shkethades.narutomod.NarutoMod;
 import com.shkethades.narutomod.init.NarutoEntities;
 import com.shkethades.narutomod.init.NarutoItems;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityClassification;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.projectile.ProjectileItemEntity;
+import net.minecraft.entity.projectile.SnowballEntity;
 import net.minecraft.item.Item;
 import net.minecraft.util.DamageSource;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;

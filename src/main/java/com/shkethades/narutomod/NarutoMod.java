@@ -2,6 +2,7 @@ package com.shkethades.narutomod;
 
 import com.shkethades.narutomod.client.entity.render.AlliedNinjaEntityRender;
 import com.shkethades.narutomod.client.entity.render.NinjaEntityRender;
+import com.shkethades.narutomod.entity.ShurikenEntity;
 import com.shkethades.narutomod.init.NarutoBlocks;
 import com.shkethades.narutomod.init.NarutoEntities;
 import com.shkethades.narutomod.init.NarutoItems;
@@ -54,7 +55,7 @@ public class NarutoMod {
     private void setupClient(final FMLClientSetupEvent event) {
         RenderingRegistry.registerEntityRenderingHandler(NarutoEntities.NINJA_ENTITY.get(), NinjaEntityRender::new);
         RenderingRegistry.registerEntityRenderingHandler(NarutoEntities.ALLIED_NINJA_ENTITY.get(), AlliedNinjaEntityRender::new);
-        RenderingRegistry.registerEntityRenderingHandler(NarutoEntities.SHURIKEN_ENTITY.get(), manager -> new SpriteRenderer<>(manager, Minecraft.getInstance().getItemRenderer()));
+        RenderingRegistry.registerEntityRenderingHandler(NarutoEntities.SHURIKEN_ENTITY.get(), manager -> new SpriteRenderer<ShurikenEntity>(manager, Minecraft.getInstance().getItemRenderer()));
     }
 
     public void serverStart(FMLServerStartingEvent event) { }

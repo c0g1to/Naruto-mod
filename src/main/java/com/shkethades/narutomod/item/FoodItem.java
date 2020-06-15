@@ -28,7 +28,7 @@ public class FoodItem extends Item {
         this.isSoup = isSoupIn;
     }
 
-    public static Item RAMEN = new FoodItem(new Item.Properties().group(NarutoMod.GROUP)
+    public static Item RAMEN = new FoodItem(new Item.Properties().group(NarutoMod.GROUP).maxStackSize(1)
             .food(new Food.Builder().hunger(10).saturation(12.0F)
                     .effect(() -> new EffectInstance(Effects.REGENERATION, 6000, 0), 0.5F)
                     .effect(() -> new EffectInstance(Effects.SPEED, 6000, 0), 0.5F)
@@ -57,6 +57,6 @@ public class FoodItem extends Item {
     @Override
     public ItemStack onItemUseFinish(ItemStack stack, World worldIn, LivingEntity entityLiving) {
         ItemStack itemstack = super.onItemUseFinish(stack, worldIn, entityLiving);
-        return entityLiving instanceof PlayerEntity && ((PlayerEntity)entityLiving).abilities.isCreativeMode && this.isSoup ? itemstack : new ItemStack(Items.BOWL);
+        return (entityLiving instanceof PlayerEntity && ((PlayerEntity)entityLiving).abilities.isCreativeMode) || !this.isSoup ? itemstack : new ItemStack(Items.BOWL);
     }
 }
